@@ -1,10 +1,127 @@
 <!DOCTYPE html>
-<html>
+<html lang="hu">
 <head>
-    <title>Sors Istennői Rejtvény</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
+    <title>Sors Istennői Rejtvény</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('images/background.jpg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+                padding: 10px 15px;
+                max-width: 90%;
+            }
+
+            .puzzle-box {
+                width: 90%;
+                padding: 15px;
+                margin: auto;
+            }
+
+            input, button {
+                font-size: 1rem;
+                padding: 10px;
+                width: 100%;
+            }
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-weight: 500;
+            color: white;
+            text-align: center;
+            max-width: 300px;
+            margin: auto;
+            background-color: black;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
+
+        .container {
+            background-image: url('images/box-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(127, 0, 255, 0.5);
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .puzzle-box {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(127, 0, 255, 0.5);
+            color: #ffffff;
+            text-align: center;
+        }
+
+        input {
+            width: calc(100% - 40px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #7f00ff;
+            border-radius: 5px;
+            background-color: #1a1a1a;
+            color: white;
+            font-size: 1.1rem;
+            box-shadow: 0 0 10px #7f00ff;
+        }
+
+        button {
+            width: calc(100% - 40px);
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #7f00ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0 0 10px #7f00ff;
+        }
+
+        button:hover {
+            background-color: #7f00ff;
+            transform: scale(1.1);
+        }
+
+        #result {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        .success {
+            background-color: #4CAF50;
+        }
+
+        .error {
+            background-color: #f44336;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -36,9 +153,11 @@
             const result = document.getElementById('result');
 
             if (left === 'múlt' && center === 'jövő' && right === 'jelen') {
-                result.innerHTML = '<span style="color: #4CAF50;">Helyes válasz! Lapozz a [következő] fejezethez.</span>';
+                result.innerHTML = "Helyes válasz! Lapozz a [következő] fejezethez.";
+                result.className = "success";
             } else {
-                result.innerHTML = '<span style="color: #f44336;">Helytelen válasz. Próbáld újra!</span>';
+                result.innerHTML = "Helytelen válasz. Próbáld újra!";
+                result.className = "error";
             }
         }
     </script>
