@@ -1,136 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="hu">
 <head>
-    <title>A 62. Fejezet Megoldása</title>
-    <meta charset=\"UTF-8\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-    <link href=\"https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap\" rel=\"stylesheet\">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A [62] fejezet feladványa</h2>
+
     <style>
-        body {
-            font-family: 'Cinzel', serif;
-            background-image: url('images/background.jpg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
 
-        .container {
-            background-image: url('images/box-background.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 20px rgba(127, 0, 255, 0.5);
-            color: #ffffff;
-            text-align: center;
-            width: 90%;
-            max-width: 600px;
-        }
+    body {
+        font-family: 'Cinzel', serif;
+        background-image: url('https://your-image-url-here.com/background.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
 
-        .puzzle-box {
-            background-color: #1a1a1a;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 20px rgba(127, 0, 255, 0.5);
-            color: #ffffff;
-            text-align: center;
-            margin-top: 15px;
-        }
+    .puzzle-box {
+        background-color: rgba(26, 26, 26, 0.9);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 20px rgba(127, 0, 255, 0.5);
+        text-align: center;
+        width: 400px;
+    }
 
-        input {
-            width: calc(100% - 40px);
-            padding: 10px;
-            margin: 10px 0;
-            border: 2px solid #7f00ff;
-            border-radius: 5px;
-            background-color: #1a1a1a;
-            color: white;
-            font-size: 1.1rem;
-            box-shadow: 0 0 10px #7f00ff;
-        }
+    h2 {
+        color: #ffffff;
+        margin-bottom: 20px;
+    }
 
-        button {
-            width: calc(100% - 40px);
-            padding: 10px;
-            margin-top: 10px;
-            background-color: #7f00ff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            box-shadow: 0 0 10px #7f00ff;
-            transition: transform 0.2s ease;
-        }
+    input[type="text"] {
+        width: calc(100% - 24px);
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 2px solid #7f00ff;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
 
-        button:hover {
-            background-color: #9b30ff;
-            transform: scale(1.1);
-        }
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #7f00ff;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
 
-        #result {
-            margin-top: 1rem;
-            padding: 1rem;
-            border-radius: 5px;
-        }
+    button:hover {
+        transform: scale(1.05);
+    }
 
-        .success {
-            background-color: #4CAF50;
-        }
+    #result {
+        margin-top: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        font-weight: bold;
+    }
 
-        .error {
-            background-color: #f44336;
-        }
+    .success {
+        color: #00ff00;
+    }
 
-        @media (max-width: 768px) {
-            .container, .puzzle-box {
-                width: 90%;
-                padding: 15px;
-            }
+    .error {
+        color: #ff4d4d;
+    }
 
-            input, button {
-                font-size: 1rem;
-                padding: 10px;
-                width: 100%;
-            }
-        }
     </style>
 </head>
 <body>
-
-    <div class=\"container\">
-        <h1>A<br>SÖTÉT MÁGIA<br>ÚTVESZTŐJE</h1>
-
-        <div class=\"puzzle-box\">
-            <h2>A [62] fejezet feladványának megoldása</h2>
-            <input type=\"text\" id=\"code\" placeholder=\"Írd be a helyes megoldást...\">
-            <button onclick=\"checkCode()\">Ellenőrzés</button>
-            <div id=\"result\"></div>
-        </div>
+    <div class="puzzle-box">
+        <h2>A [62] fejezet feladványának megoldása</h2>
+        <input type="text" id="code" placeholder="Írd be a helyes megoldást...">
+        <button onclick="checkCode()">Ellenőrzés</button>
+        <div id="result"></div>
     </div>
 
     <script>
-        function checkCode() {
-            const code = document.getElementById('code').value.trim();
-            const result = document.getElementById('result');
+    function checkCode() {
+        const code = document.getElementById('code').value.trim();
+        const result = document.getElementById('result');
 
-            if (code === \"25\") {
-                result.innerHTML = \"Helyes! Lapozz a [209]-re a következő fejezethez!\";
-                result.className = \"success\";
-            } else {
-                result.innerHTML = \"Helytelen válasz. Próbáld újra!\";
-                result.className = \"error\";
-            }
+        // Itt adhatod meg a helyes megoldást
+        if (code === "25") {
+            result.innerHTML = "Helyes! Lapozz a [209]-re a következő fejezethez!";
+            result.classList.remove('error');
+            result.className = 'success';
+        } else {
+            result.innerHTML = "Hibás megoldás, próbáld újra!";
+            result.className = "error";
         }
+    }
     </script>
 
+    <div id="result"></div>
 </body>
 </html>
