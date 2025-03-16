@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A 62. Fejezet Megoldása</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cinzel', serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('your-background-image.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .puzzle-box {
+            background: rgba(26, 26, 26, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(127, 0, 255, 0.5);
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+
+        input, button {
+            width: calc(100% - 40px);
+            padding: 10px;
+            margin-top: 10px;
+            border: 2px solid #7f00ff;
+            border-radius: 5px;
+            background-color: #1a1a1a;
+            color: white;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        button {
+            background-color: #7f00ff;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #9b30ff;
+            transform: scale(1.05);
+        }
+
+        #result {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .success {
+            background-color: #4CAF50;
+        }
+
+        .error {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="puzzle-box">
+        <h2>A 62. fejezet rejtvényének megoldása</h2>
+        <input type="text" id="code" placeholder="Írd be a helyes megoldást...">
+        <button onclick="checkCode()">Ellenőrzés</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkCode() {
+            const codeInput = document.getElementById("code").value.trim();
+            const result = document.getElementById("result");
+
+            if (code.value === "25") {
+                result.innerHTML = "Helyes! Lapozz a [209]-re a következő fejezethez!";
+                result.className = "success";
+                result.style.backgroundColor = "#4CAF50";
+            } else {
+                result.innerHTML = "Ez sajnos nem helyes. Próbáld meg újra!";
+                result.className = "error";
+                result.style.backgroundColor = "#f44336";
+            }
+        }
+    </style>
+    <script>
+        function checkCode() {
+            const code = document.getElementById('code').value;
+            const result = document.getElementById('result');
+            
+            if (code.trim() === "25") {
+                result.innerHTML = "Helyes! Lapozz a [209]-re a következő fejezethez!";
+                result.className = "success";
+            } else {
+                result.innerHTML = "Hibás megoldás. Próbáld újra!";
+                result.className = "error";
+            }
+        }
+    </script>
+</body>
+</html>
